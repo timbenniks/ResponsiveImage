@@ -6,7 +6,7 @@ The image tag should have a `data-sources` attribute with an array of images tha
 
 If you dont want to do that you can add an empty index into the array. The script will then use the last selected image when the breakpoint of the empty index hits.
 
-When `retina: true` is added to the settings the script will find out what the device pixel ratio is via javascript. If it is higher then 1 the script will add `@2` to the image source name. `guitar-530.jpg` will become `guitar-530@2.jpg`.
+When `retina: true` is added to the settings the script will find out what the device pixel ratio is via javascript. If it is higher then the `minDevicePixelRatio` the script will add `@2` to the image source name. `guitar-530.jpg` will become `guitar-530@2.jpg`.
 
 This solution is quite harsh and it makes sure you create retina assets for all responsive image tags. If you don't, it will break.
 
