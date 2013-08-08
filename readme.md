@@ -11,9 +11,11 @@ When `retina: true` is added to the settings the script will find out what the d
 This solution is quite harsh and it makes sure you create retina assets for all responsive image tags. If you don't, it will break.
 
 ## implementation
-`<img src="guitar-320.jpg" data-sources='["guitar-320.jpg", "guitar-500.jpg", "guitar-768.jpg", "guitar-1024.jpg", "guitar-1920.jpg"]' alt="guitar" />`
+``` html
+<img src="guitar-320.jpg" data-sources='["guitar-320.jpg", "guitar-500.jpg", "guitar-768.jpg", "guitar-1024.jpg", "guitar-1920.jpg"]' alt="guitar" />`
+```
 
-`
+``` javascript
 var responsiveImageInstance = new responsiveImage(
 {
 	retina: true,
@@ -26,4 +28,4 @@ var responsiveImageInstance = new responsiveImage(
 		'(min-width: 1024px)'
 	]
 });
-`
+```
