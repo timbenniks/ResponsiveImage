@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<title>Yet another responsive image solution</title>
+	<style>
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1,minimum-scale=1,maximum-scale=1" />
+</head>
+<body>
+	<img src="guitar-320.jpg" data-sources='["guitar-320.jpg", "guitar-500.jpg", "guitar-768.jpg", "guitar-1024.jpg", "guitar-1920.jpg"]' alt="guitar" />
+	<img src="guitar-320.jpg" data-sources='["guitar-320.jpg", "guitar-500.jpg", "guitar-768.jpg", "guitar-1024.jpg", "guitar-1920.jpg"]' alt="guitar" />
+
+	<script src="responsive.js"></script>
+
+	<script>
+		var responsiveImageInstance = new responsiveImage(
+		{
+			retina: true,
+			onresize: true,
+			breakpoints: [
+				'(max-width: 320px)',
+				'(min-width: 321px) and (max-width: 500px)',
+				'(min-width: 501px) and (max-width: 768px)',
+				'(min-width: 769px) and (max-width: 1024px)',
+				'(min-width: 1024px)'
+			]
+		});
+
+	</script>
+
+</body>
+</html>
