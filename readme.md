@@ -19,6 +19,7 @@ This solution is quite harsh and it makes sure you create retina assets for all 
 var responsiveImageInstance = new responsiveImage(
 {
 	retina: true,
+	minDevicePixelRatio: 2,
 	onresize: true,
 	breakpoints: [
 		'(max-width: 320px)',
@@ -32,5 +33,6 @@ var responsiveImageInstance = new responsiveImage(
 
 ### Options
 * `retina` boolean, defaults to false
+* `minDevicePixelRatio` number, defaults to 2
 * `onresize` boolean, defaults to false
 * `breakpoints` array

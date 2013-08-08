@@ -4,6 +4,7 @@ window.responsiveImage = function(options)
 		breakPoints = options.breakpoints,
 		retina = options.retina || false,
 		onresize = options.onresize || false,
+		minDevicePixelRatio = options.minDevicePixelRatio || 2,
 
 	matchMedia = window.matchMedia || function()
 	{
@@ -43,7 +44,7 @@ window.responsiveImage = function(options)
 			var sources = (images[b].dataset !== undefined && images[b].dataset !== null) ? JSON.parse(images[b].dataset['sources']) : JSON.parse(images[b].getAttribute('data-sources')),
 				src = sources[chosenBreakpoint];
 
-			if((sources && src) && (images[b].src !== src)) images[b].src = (devicePixelRatio > 1) ? src.split('.')[0] + '@2.' + src.split('.')[1] : src;
+			if((sources && src) && (images[b].src !== src)) images[b].src = (devicePixelRatio >= minDevicePixelRatio) ? src.split('.')[0] + '@2.' + src.split('.')[1] : src;
 		}
 	};
 
